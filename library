@@ -1,1 +1,53 @@
+-- Put the data_analysis.py in a clean folder --
+-- Make a folder name "library" in the clearn folder --
+Copy this code 
 
+import os 
+import matplotlib.pyplot as plt
+import subprocess
+from sklearn import metrics
+import numpy as np
+
+print("No. ------ Data    ------")
+print("1.  ------ Metrics ------")
+selection = str(input("Enter no. of integer base you the information you would like to find: "))
+if selection == "1":
+    count = int(input("How many count to calculate accuracy? "))
+    success = int(input("In this, how manu percentange is success?"))
+    predicted_success_count = int(input("How many predicted percentage to success?"))
+    actual = np.random.binomial(1, .9, size = count)
+    predicted = np.random.binomial(1, .9, size = count)
+    Accuracy = metrics.accuracy_score(actual, predicted)
+    print("The accuracy is ", Accuracy)
+else:
+    print("Warning! The No. is not correct.")
+
+and name it as First_m.py
+
+After that
+Copy this 
+import matplotlib.pyplot as plt
+import os
+
+# Initialize empty lists to store data
+x = []
+y = []
+
+number = int(input("Enter number of data points: "))
+for i in range(number):
+    data = input("Enter data for point {}: ".format(i))
+    x.append(i)
+    y.append(data)
+    os.system("cls")
+
+y = [float(val) for val in y]
+
+plt.plot(x, y)
+plt.xlabel("Data Point Index")
+plt.ylabel("Data Value")
+plt.title("Data Plot")
+
+plt.show()
+
+and name it as plotting.py
+-- put First_m.py and plotting.py in "library" folder --
